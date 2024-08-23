@@ -1,0 +1,26 @@
+---
+title: "fiddler_crab_colab"
+format: html
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+library(tidyverse)
+library(lterdatasampler)
+library(here)
+
+```
+
+```{r}
+crab_stats <- pie_crab %>% group_by(latitude, site) %>% 
+  summarise(
+  n = n(), 
+  mean_mm = mean(size),
+  min_mm = min(size),
+  max_mm = max(size),
+  sd_mm = sd(size),
+  median_mm = median(size)
+  ) 
+```
+
