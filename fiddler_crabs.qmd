@@ -24,3 +24,8 @@ crab_stats <- pie_crab %>% group_by(latitude, site) %>%
   ) 
 ```
 
+```{r}
+ggplot(data = pie_crab, aes(x= size, y = latitude)) +
+  geom_point()
+```
+
